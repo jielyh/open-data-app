@@ -1,6 +1,5 @@
 <?php
 
-require_once 'includes/filter-wrapper.php';
 require_once 'includes/db.php';
 
 // `->exec()` allows us to perform SQL and NOT expect results

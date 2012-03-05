@@ -6,9 +6,7 @@ $user = getenv('DB_USER');
 $pass = getenv('DB_PASS');
 $dsn = stripslashes(getenv('DB_DSN'));
 
-var_dump($user);
-var_dump($pass);
-var_dump($dsn);
+
 
 // We are using PDO to abstract away the database type we are connecting to
 // PDO allows us to connect to many different database types: MySQL, SQLite, MSSQL, Oracle, etc.

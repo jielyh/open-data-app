@@ -21,18 +21,21 @@ $results = $db->query('
     <link href="css/public.css" rel="stylesheet"/>
 </head>
 <body>	
-	
-    <div class="list">
-	<ul>
-	
-	<?php foreach ($results as $location) : ?>
-		<li>
-			<a href="single.php?id=<?php echo $location['id']; ?>"><?php echo $location['id']; ?></a>
-	
-		</li>
-	<?php endforeach; ?>
-	</ul>
+	<div class="list">
+		<ol class="courts">
+			<?php foreach ($results as $location) : ?>	
+				<li itemscope itemtype="http://schema.org/TouristAttraction">
+					<a href="single.php?id=<?php echo $location['id']; ?>"><?php echo $location['id']; ?></a>
+					<span itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
+					<meta itemprop="latitude" content="<?php echo $dino['latitude']; ?>">
+					<meta itemprop="longitude" content="<?php echo $dino['longitude']; ?>">
+					</span>
+				</li>
+			<?php endforeach; ?>
+		</ol>
     </div>
+    
+    <div id="map"></div>
 	
 </body>
 </html>

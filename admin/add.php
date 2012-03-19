@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		require_once 'includes/db.php';
 		
 		$sql = $db->prepare('
-			INSERT INTO movies (name,longitude, latitude)
+			INSERT INTO open_data_app (name,longitude,latitude)
 			VALUES (:name, :longitude, :latitude)
 		');
 		$sql->bindValue(':name', $name, PDO::PARAM_STR);
@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Add a Movie</title>
+	<title>Add a basketball court</title>
     <script src="../js/modernizr-2.5.3.js"></script>
     <link href="../css/admin.css" rel="stylesheet"/>    
 </head>
@@ -51,16 +51,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
 	<form method="post" action="add.php">
 		<div>
-			<label for="movie_title">Movie Title<?php if (isset($errors['movie_title'])) : ?> <strong>is required</strong><?php endif; ?></label>
-			<input id="movie_title" name="movie_title" value="<?php echo $movie_title; ?>" required>
+			<label for="name">Basketball Court Name<?php if (isset($errors['name'])) : ?> <strong>is required</strong><?php endif; ?></label>
+			<input id="name" name="name" value="<?php echo $name; ?>" required>
 		</div>
 		<div>
-			<label for="release_date">Release Date<?php if (isset($errors['release_date'])) : ?> <strong>is required</strong><?php endif; ?></label>
-			<input id="release_date" name="release_date" value="<?php echo $release_date; ?>" required>
+			<label for="longitude">Longitude<?php if (isset($errors['longitude'])) : ?> <strong>is required</strong><?php endif; ?></label>
+			<input id="longitude" name="longitude" value="<?php echo $longitude; ?>" required>
 		</div>
         <div>
-			<label for="director">Director<?php if (isset($errors['director'])) : ?> <strong>is required</strong><?php endif; ?></label>
-			<input id="director" name="director" value="<?php echo $director; ?>" required>
+			<label for="longitude">Latitude<?php if (isset($errors['longitude'])) : ?> <strong>is required</strong><?php endif; ?></label>
+			<input id="longitude" name="longitude" value="<?php echo $longitude; ?>" required>
 		</div>
 		<button type="submit">Add</button>
 	</form>

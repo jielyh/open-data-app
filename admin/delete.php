@@ -16,7 +16,7 @@ require_once 'includes/db.php';
 
 // prepare to delete movie from database, if the id exsists (ex 1 = 1)
 $sql = $db->prepare('
-	DELETE FROM movies
+	DELETE FROM open_data_app
 	WHERE id = :id
 	LIMIT 1
 ');

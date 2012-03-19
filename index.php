@@ -8,7 +8,7 @@ require_once 'includes/db.php';
 //creating 'results' variable ($)
 $results = $db->query(' 
 	SELECT id, name, longitude, latitude
-	FROM opendataapp
+	FROM open_data_app
 	
 ');
 
@@ -21,16 +21,20 @@ $results = $db->query('
     <link href="css/public.css" rel="stylesheet"/>
 </head>
 <body>	
-
+	
+    <div class="list">
 	<ul>
 	
-	<?php foreach ($results as $name) : ?>
+	<?php foreach ($results as $location) : ?>
 		<li>
-			<a href="single.php?id=<?php echo $name['id']; ?>"><?php echo $name['id']; ?></a>
+			<a href="single.php?id=<?php echo $location['id']; ?>"><?php echo $location['id']; ?></a>
 	
 		</li>
 	<?php endforeach; ?>
 	</ul>
+    </div>
 	
 </body>
 </html>
+
+

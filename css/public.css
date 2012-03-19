@@ -1,3 +1,23 @@
 @charset "utf-8";
 /* CSS Document */
 
+html{
+background:#FFC;	
+}
+
+.list{
+	margin:0;
+	padding:0;
+	
+	width:50%;
+background:#CCC;	
+}
+
+
+#map {
+	bottom: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 75%;
+}

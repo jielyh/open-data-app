@@ -1,6 +1,6 @@
 <?php
 
-require_once 'includes/db.php';
+require_once '../includes/db.php';
 
 // `->exec()` allows us to perform SQL and NOT expect results
 // `->query()` allows us to perform SQL and expect results
@@ -8,7 +8,7 @@ require_once 'includes/db.php';
 //creating 'results' variable ($)
 $results = $db->query(' 
 	SELECT id, name, longitude, latitude
-	FROM opendataapp
+	FROM open_data_app
 	ORDER BY name ASC
 ');
 
@@ -26,7 +26,7 @@ $results = $db->query('
 	
 	<?php foreach ($results as $name) : ?>
 		<li>
-			<a href="single.php?id=<?php echo $name['id']; ?>"><?php echo $name['name']; ?></a>
+			<a href="single.php?id=<?php echo $name['id']; ?>"><?php echo $name['id']; ?></a>
 			&bull;
             <a href="edit.php?id=<?php echo $name['id']; ?>">Edit</a>
 			<a href="delete.php?id=<?php echo $name['id']; ?>">Delete</a>

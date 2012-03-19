@@ -19,7 +19,7 @@ require_once 'includes/db.php';
 // ->prepare() allows us to execute SQL with user input
 $sql = $db->prepare('
 	SELECT id, longitude, latitude
-	FROM opendataapp
+	FROM open_data_app
 	WHERE id = :id 
 ');
 

@@ -12,27 +12,33 @@ if (empty($id)) {
 	exit;
 }
 
-$dino_name = filter_input(INPUT_POST, 'dino_name', FILTER_SANITIZE_STRING);
-$period = filter_input(INPUT_POST, 'period', FILTER_SANITIZE_STRING);
+$name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+$longitude = filter_input(INPUT_POST, 'longitude', FILTER_SANITIZE_STRING);
+$latitude = filter_input(INPUT_POST, 'latitude', FILTER_SANITIZE_STRING);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-	if (empty($dino_name)) {
-		$errors['dino_name'] = true;
+	if (empty($name)) {
+		$errors['name'] = true;
 	}
 	
-	if (empty($period)) {
-		$errors['period'] = true;
+	if (empty($longitude)) {
+		$errors['longitude'] = true;
+	}
+	if (empty($latitude)) {
+		$errors['latitude'] = true;
 	}
 	
 	if (empty($errors)) {
 		$sql = $db->prepare('
-			UPDATE dinosaurs
-			SET dino_name = :dino_name, period = :period
+			UPDATE open_data_app
+			SET name = :name, longitude = :longitude, latitude = :latitude
 			WHERE id = :id
 		');
-		$sql->bindValue(':dino_name', $dino_name, PDO::PARAM_STR);
-		$sql->bindValue(':period', $period, PDO::PARAM_STR);
 		$sql->bindValue(':id', $id, PDO::PARAM_INT);
+		$sql->bindValue(':name', $name, PDO::PARAM_STR);
+		$sql->bindValue(':longitude', $longitude, PDO::PARAM_STR);
+		$sql->bindValue(':latitude', $latitude, PDO::PARAM_STR);
+		
 		$sql->execute();
 		
 		header('Location: index.php');
@@ -40,34 +46,39 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	}
 } else {
 	$sql = $db->prepare('
-		SELECT id, dino_name, period
-		FROM dinosaurs
+		SELECT id, name, longitude, latitude
+		FROM open_data_app
 		WHERE id = :id
 	');
 	$sql->bindValue(':id', $id, PDO::PARAM_INT);
 	$sql->execute();
 	$results = $sql->fetch();
 	
-	$dino_name = $results['dino_name'];
-	$period = $results['period'];
+	$name = $results['name'];
+	$longitude = $results['longitude'];
+	$latitide = $results['latitude'];
 }
 
 ?><!DOCTYPE HTML>
 <html>
 <head>
 	<meta charset="utf-8">
-	<title><?php echo $dino_name; ?> &middot; Edit Dinosaur</title>
+	<title><?php echo $name; ?> &middot; Edit Basketball Court!</title>
 </head>
 <body>
 	
 	<form method="post" action="edit.php?id=<?php echo $id; ?>">
 		<div>
-			<label for="dino_name">Dinosaur Name<?php if (isset($errors['dino_name'])) : ?> <strong>is required</strong><?php endif; ?></label>
-			<input id="dino_name" name="dino_name" value="<?php echo $dino_name; ?>" required>
+			<label for="name">Basketball Court Name<?php if (isset($errors['name'])) : ?> <strong>is required</strong><?php endif; ?></label>
+			<input id="name" name="name" value="<?php echo $name; ?>" required>
 		</div>
 		<div>
-			<label for="period">Period<?php if (isset($errors['period'])) : ?> <strong>is required</strong><?php endif; ?></label>
-			<input id="period" name="period" value="<?php echo $period; ?>" required>
+			<label for="longitude">longitude<?php if (isset($errors['longitude'])) : ?> <strong>is required</strong><?php endif; ?></label>
+			<input id="longitude" name="longitude" value="<?php echo $longitude; ?>" required>
+		</div>
+        <div>
+			<label for="latitude">latitude<?php if (isset($errors['latitude'])) : ?> <strong>is required</strong><?php endif; ?></label>
+			<input id="latitude" name="latitude" value="<?php echo $latitude; ?>" required>
 		</div>
 		<button type="submit">Save</button>
 	</form>

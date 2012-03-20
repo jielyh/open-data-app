@@ -25,6 +25,8 @@ $(document).ready(function() {
 		// Style the content in your CSS
 		var info = '<div class="info-window">'
 			+ '<strong>' + name + '</strong>'
+			+ '<strong>' + longitude + '</strong>'
+			+ '<strong>' + latitude + '</strong>'
 			+ '</div>'
 		;
 

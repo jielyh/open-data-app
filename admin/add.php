@@ -1,6 +1,7 @@
 <?php
 
-require_once 'includes/filter-wrapper.php';
+require_once '../includes/filter-wrapper.php';
+
 
 //creating error
 $errors = array();
@@ -22,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	}
 	
 	if (empty($errors)) {
-		require_once 'includes/db.php';
+		require_once '../includes/db.php';
 		
 		$sql = $db->prepare('
 			INSERT INTO open_data_app (name,longitude,latitude)

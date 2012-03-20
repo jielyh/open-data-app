@@ -12,7 +12,7 @@ if (empty($id)) {
 }
 
 // if there is id, then run database
-require_once 'includes/db.php';
+require_once '../includes/db.php';
 
 // prepare to delete movie from database, if the id exsists (ex 1 = 1)
 $sql = $db->prepare('

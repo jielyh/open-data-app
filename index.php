@@ -17,7 +17,6 @@ $results = $db->query('
 <head>
 	<meta charset="utf-8">
 	<title>Basketball Courts!</title>
-	<script src="js/modernizr-2.5.3.js"></script>
     <link href="css/public.css" rel="stylesheet"/>
 </head>
 <body>	
@@ -27,8 +26,8 @@ $results = $db->query('
 				<li itemscope itemtype="http://schema.org/TouristAttraction">
 					<a href="single.php?id=<?php echo $location['id']; ?>"><?php echo $location['id']; ?></a>
 					<span itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
-					<meta itemprop="latitude" content="<?php echo $dino['latitude']; ?>">
-					<meta itemprop="longitude" content="<?php echo $dino['longitude']; ?>">
+					<meta itemprop="latitude" content="<?php echo $location['latitude']; ?>">
+					<meta itemprop="longitude" content="<?php echo $location['longitude']; ?>">
 					</span>
 				</li>
 			<?php endforeach; ?>
@@ -37,6 +36,11 @@ $results = $db->query('
     
     <div id="map"></div>
 	
+	
+	<script src="js/modernizr-2.5.3.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD1neW38erbHLpvMIDfINGdccoIPME2LRg&sensor=false"></script>
+    <script src="js/courts.js"></script>
 </body>
 </html>
 

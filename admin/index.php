@@ -9,7 +9,7 @@ require_once '../includes/db.php';
 $results = $db->query(' 
 	SELECT id, name, longitude, latitude
 	FROM open_data_app
-	ORDER BY name ASC
+	ORDER BY id ASC
 ');
 
 ?><!DOCTYPE HTML>
@@ -18,21 +18,22 @@ $results = $db->query('
 	<meta charset="utf-8">
 	<title>Basketball Courts!</title>
 	<script src="../js/modernizr-2.5.3.js"></script>
-    <link href="../css/admin.css" rel="stylesheet"/>    
+    <link href="../css/admin.css" rel="stylesheet">    
 </head>
 <body>	
 <a href="add.php">Add a basketball court!</a>	
-	<ul>
+	<ul class="name">
 	
-	<?php foreach ($results as $name) : ?>
+	<?php foreach ($results as $var): ?>
 		<li>
-			<a href="single.php?id=<?php echo $name['id']; ?>"><?php echo $name['id']; ?></a>
+			<a href="single.php?id=<?php echo $var['id']; ?>"><?php echo $var['id'] . $var['name']; ?></a>
 			&bull;
-            <a href="edit.php?id=<?php echo $name['id']; ?>">Edit</a>
-			<a href="delete.php?id=<?php echo $name['id']; ?>">Delete</a>
+            <a href="edit.php?id=<?php echo $var['id']; ?>">Edit</a>
+			<a href="delete.php?id=<?php echo $var['id']; ?>">Delete</a>
 		</li>
 	<?php endforeach; ?>
 	</ul>
+   
 	
 </body>
 </html>

@@ -1,6 +1,6 @@
 <?php
 
-require_once 'includes/filter-wrapper.php';
+require_once '../includes/filter-wrapper.php';
 require_once '../includes/db.php';
 
 $errors = array();
@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	
 	$name = $results['name'];
 	$longitude = $results['longitude'];
-	$latitide = $results['latitude'];
+	$latitude = $results['latitude'];
 }
 
 ?><!DOCTYPE HTML>

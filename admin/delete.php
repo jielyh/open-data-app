@@ -1,6 +1,6 @@
 <?php
 
-require_once 'includes/filter-wrapper.php';
+require_once '../includes/filter-wrapper.php';
 
 //creating variable id that holds the id from the query string (url)
 $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);

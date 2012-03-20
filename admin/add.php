@@ -6,9 +6,9 @@ require_once '../includes/filter-wrapper.php';
 //creating error
 $errors = array();
 
-$movie_title = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
-$release_date = filter_input(INPUT_POST, 'longitude', FILTER_SANITIZE_STRING);
-$director = filter_input(INPUT_POST, 'latitude', FILTER_SANITIZE_STRING);
+$name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+$longitude = filter_input(INPUT_POST, 'longitude', FILTER_SANITIZE_STRING);
+$latitude = filter_input(INPUT_POST, 'latitude', FILTER_SANITIZE_STRING);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	if (empty($name)) {
@@ -60,8 +60,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			<input id="longitude" name="longitude" value="<?php echo $longitude; ?>" required>
 		</div>
         <div>
-			<label for="longitude">Latitude<?php if (isset($errors['longitude'])) : ?> <strong>is required</strong><?php endif; ?></label>
-			<input id="longitude" name="longitude" value="<?php echo $longitude; ?>" required>
+			<label for="latitude">Latitude<?php if (isset($errors['latitude'])) : ?> <strong>is required</strong><?php endif; ?></label>
+			<input id="latitude" name="latitude" value="<?php echo $latitude; ?>" required>
 		</div>
 		<button type="submit">Add</button>
 	</form>

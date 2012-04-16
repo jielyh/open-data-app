@@ -93,7 +93,9 @@ body {
 
 .rater-level {
 	float: left;
-
+	height:30px;
+	width: 30px;
+	background:url(../images/rate1.png) no-repeat;
 	color: #666;
 }
 
@@ -101,7 +103,11 @@ body {
 .rater-level a:link,
 .rater-level a:visited {
 	color: #666;
-	text-decoration: none
+	text-decoration: none;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	
 }
 
 .rater-level a:hover,
@@ -118,6 +124,8 @@ body {
 .is-rated-hover a:link,
 .is-rated-hover a:visited {
 	color: #090;
+	background:url(../images/rate2.png) no-repeat;
+
 }
 
 .info-window strong {

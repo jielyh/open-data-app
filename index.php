@@ -59,7 +59,7 @@ $results = $db->query('
 				<ol class="rater">
 					<?php for ($i = 1; $i <= 5; $i++) : ?>
 						<?php $class = ($i <= $rating) ? 'is-rated' : ''; ?>
-						<li class="rater-level <?php echo $class; ?>">★</li>
+						<li class="rater-level <?php echo $class; ?>"></li>
 					<?php endfor; ?>
 				</ol>
 			</li>

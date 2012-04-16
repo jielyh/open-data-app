@@ -6,6 +6,7 @@ body {
 	width: 1024px;
 	height: 768px;
 	margin: 0 auto;
+	padding: 1px;
 	
 	font-family:Tahoma, Geneva, sans-serif;
 	background:url(../images/background.jpg) no-repeat center center;
@@ -182,4 +183,19 @@ body {
 		
 	border: 3px solid #000;
 	opacity: 0.8;
+}
+
+.insingle {
+	border: 6px solid #000;
+	background-color:#FFFFFF;
+	padding: 2em;
+	opacity: 0.9;
+	
+	width: 400px;
+	height: 300px;
+	
+	margin: 0 auto;
+	margin-top: 14em;
+	
+	overflow:scroll;
 }

@@ -16,6 +16,10 @@ if (empty($id)) {
 //
 require_once 'includes/db.php';
 
+require_once 'includes/functions.php';
+
+require_once 'includes/filter-wrapper.php';
+
 // ->prepare() allows us to execute SQL with user input
 $sql = $db->prepare('
 	SELECT id, longitude, latitude
@@ -45,16 +49,57 @@ if (empty($results)) {
 	exit; // Stop the PHP compiler right here and immediately redirect the user
 }
 
+$title = $results['id'];
+
+if ($results['rate_count'] > 0) {
+	$rating = round($results['rate_total'] / $results['rate_count']);
+} else {
+	$rating = 0;
+}
+
+$cookie = get_rate_cookie();
+
+
 ?><!DOCTYPE HTML>
 <html>
 <head>
 	<meta charset="utf-8">
 	<title><?php echo $results['id']; ?> &middot; Basketball Courts 2009</title>
+    <link href="css/public.css" rel="stylesheet">
 </head>
 <body>
+	<div class="insingle">
+        <h1><?php echo $results['id']; ?></h1>
+        <dl>
+		<dt>Average Rating</dt><dd><meter value="<?php echo $rating; ?>" min="0" max="5"><?php echo $rating; ?> out of 5</meter></dd>
+		<dt>Address</dt><dd><?php echo $results['address']; ?></dd>
+		<dt>Longitude</dt><dd><?php echo $results['longitude']; ?></dd>
+		<dt>Latitude</dt><dd><?php echo $results['latitude']; ?></dd>
+	</dl>
 	
-	<h1><?php echo $results['id']; ?></h1>
-	<p>Longitude: <?php echo $results['longitude']; ?></p>
-	<p>Latitude: <?php echo $results['latitude']; ?></p>
+	<?php if (isset($cookie[$id])) : ?>
+	
+	<h2>Your rating</h2>
+	<ol class="rater rater-usable">
+		<?php for ($i = 1; $i <= 5; $i++) : ?>
+			<?php $class = ($i <= $cookie[$id]) ? 'is-rated' : ''; ?>
+			<li class="rater-level <?php echo $class; ?>">★</li>
+		<?php endfor; ?>
+	</ol>
+	
+	<?php else : ?>
+	
+	<h2>Rate</h2>
+	<ol class="rater rater-usable">
+		<?php for ($i = 1; $i <= 5; $i++) : ?>
+		<li class="rater-level"><a href="rate.php?id=<?php echo $results['id']; ?>&rate=<?php echo $i; ?>">★</a></li>
+		<?php endfor; ?>
+	</ol>
+    <?php endif; ?>
+        <div class="login">
+        	<a href="index.php">Go Back</a>
+    	</div>
+    </div>
+    
 </body>
 </html>

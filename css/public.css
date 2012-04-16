@@ -1,23 +1,185 @@
 @charset "utf-8";
 /* CSS Document */
 
-html{
-background:#FFC;	
+
+body {
+	width: 1024px;
+	height: 768px;
+	margin: 0 auto;
+	
+	font-family:Tahoma, Geneva, sans-serif;
+	background:url(../images/background.jpg) no-repeat center center;
 }
 
-.list{
-	margin:0;
-	padding:0;
+.left_side {
+	float: left;
+	margin-left: 1.9em;
+	margin-top: 5em;
+}
+
+.right_side {
+	float: right;
+	margin-right: 5em;
+	margin-top: 12em;
+}
+
+/*.list{
+
+	width:460px;
+	height: 435px;
+	background:#CCC;
 	
-	width:25%;
-	background:#CCC;	
+	/*position: absolute;
+	left: 20px;
+	top: 200px;	
+	
+	overflow: scroll;
+	float:right;
+	
+	background-color:rgba(255,255,255,0.75);
+}
+*/
+
+.courts {
+	overflow-y: scroll;
+	
+	width: 360px;
+	height: 400px;
+	
+	border: 6px solid #000;
+	background-color: #FFF;
+	opacity: 0.8;
+}
+
+.courts li {
+	cursor: pointer;
+	list-style-type: none;
+	margin-bottom: 0.5em;
+	margin-top: 0.5em;
+}
+
+.courts li:hover {
+	background-color: #ffdc6d;
+}
+
+.courts a,
+.courts a:link,
+.courts a:visited {
+	color: #000;
+	text-decoration: none;
+}
+
+.courts li meter {
+	display: inline-block;
+	height: 0;
+	margin: 0;
+	padding: 0;
+	width: 0;
+
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+.rater {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	vertical-align: middle;
+
+	list-style-type: none;
+	line-height: 1;
+}
+
+.rater-level {
+	float: left;
+
+	color: #666;
+}
+
+.rater-level a,
+.rater-level a:link,
+.rater-level a:visited {
+	color: #666;
+	text-decoration: none
+}
+
+.rater-level a:hover,
+.rater-level a:focus,
+.rater-level a:active,
+.is-rated,
+.is-rated a,
+.is-rated a:link,
+.is-rated a:visited,
+.is-rated a:hover,
+.is-rated a:focus,
+.is-rated a:active,
+.is-rated-hover a,
+.is-rated-hover a:link,
+.is-rated-hover a:visited {
+	color: #090;
+}
+
+.info-window strong {
+	display: block;
 }
 
 
 #map {
-	bottom: 0;
-	position: absolute;
-	right: 0;
-	top: 0;
-	width: 75%;
+	
+	width: 465px;
+	height:490px;
+	
+	border: 6px solid #000;
+	
+}
+
+.login{
+	margin: 10px;;
+	padding:5px;
+	
+	border: 3px solid #000;
+	
+	border: 3px solid #000;
+	
+	width: 150px;
+	height: 30px;
+	background-color: #FFF;
+	float: left;
+	
+	text-align:center;
+	font-weight:bold;
+	text-decoration:none;
+	
+}
+
+.login a {
+	color: #000;
+	text-decoration: none;
+	
+}
+
+#geo {
+	cursor: pointer;
+	border: 3px solid #000;
+	
+	width: 75px;
+	height: 30px;
+	background-color: #FFF;
+	float: left;
+	
+	text-align:center;
+	font-weight:bold;
+	margin: 10px;
+	padding: 5px;
+}
+
+
+#adr {
+	width: 360px;
+	height: 40px;
+	color:#999;
+	font-size: 18px;
+		
+	border: 3px solid #000;
+	opacity: 0.8;
 }

@@ -1,4 +1,11 @@
 <?php
+require_once'../users.php';
+
+if (!user_is_signed_in()) {
+	header('Location: sign-in.php');
+	exit;	
+}
+
 
 require_once '../includes/db.php';
 

@@ -64,7 +64,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     
         </form>
         
-        <div class="login">
+        <div class="login buttons-css">
         	<a href="../index.php">Home</a>
     	</div>
      </div>

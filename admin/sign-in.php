@@ -68,5 +68,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         	<a href="../index.php">Home</a>
     	</div>
      </div>
+     <footer>Copyright 2012, jielyh.com</footer>
 </body>
 </html>

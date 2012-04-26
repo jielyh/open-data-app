@@ -103,5 +103,7 @@ $cookie = get_rate_cookie();
     	</div>
     </div>
     
+    <footer>Copyright 2012, jielyh.com</footer>
+    
 </body>
 </html>

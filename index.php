@@ -66,6 +66,8 @@ $results = $db->query('
 			<?php endforeach; ?>
 		</ol>
     </div>
+    
+    <footer>Copyright 2012, jielyh.com</footer>
 
 	<script src="js/modernizr-2.5.3.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>

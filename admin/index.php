@@ -47,6 +47,8 @@ $results = $db->query('
 		</li>
 	<?php endforeach; ?>
 	</ul>
+    
+    <footer>Copyright 2012, jielyh.com</footer>
    
 	
 </body>

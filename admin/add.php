@@ -69,5 +69,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         	<a href="index.php">Admin Page</a>
     	</div>
 	</div>	
+    <footer>Copyright 2012, jielyh.com</footer>
 </body>
 </html>

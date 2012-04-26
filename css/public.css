@@ -10,6 +10,8 @@ body {
 	
 	font-family:Tahoma, Geneva, sans-serif;
 	background:url(../images/background.jpg) no-repeat center center;
+	
+	position:relative;
 }
 
 .left_side {
@@ -224,4 +226,9 @@ body {
 	color: #000;
 	text-decoration: none;
 }
-
+footer {
+	position: absolute;
+	bottom: 1em;
+	right: 1em;
+	color: #FFF;
+}

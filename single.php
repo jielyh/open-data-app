@@ -95,8 +95,11 @@ $cookie = get_rate_cookie();
 		<?php endfor; ?>
 	</ol>
     <?php endif; ?>
-        <div class="login">
+        <div class="login buttons-css">
         	<a href="index.php">Go Back</a>
+    	</div>
+        <div class="login buttons-css">
+        	<a href="admin/index.php">Admin Page</a>
     	</div>
     </div>
     

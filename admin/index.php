@@ -25,16 +25,23 @@ $results = $db->query('
 	<meta charset="utf-8">
 	<title>Basketball Courts!</title>
 	<script src="../js/modernizr-2.5.3.js"></script>
-    <link href="../css/admin.css" rel="stylesheet">    
+    <link href="../css/public.css" rel="stylesheet">    
 </head>
 <body>	
-<a href="add.php">Add a basketball court!</a>	
-	<ul class="name">
+	<div class="buttons-css">
+    	<a href="../index.php">Home</a>
+    </div>
+    <div class="buttons-css">
+        <a href="add.php">Add a basketball court!</a>
+    </div>
+    <div class="buttons-css">
+        <a href="sign-out.php">Sign Out</a>	
+    </div>
+	<ul class="name insingle">
 	
 	<?php foreach ($results as $var): ?>
 		<li>
-			<a href="single.php?id=<?php echo $var['id']; ?>"><?php echo $var['id'] . $var['name']; ?></a>
-			&bull;
+			<a href="../single.php?id=<?php echo $var['id']; ?>"><?php echo $var['id'] . $var['name']; ?></a>
             <a href="edit.php?id=<?php echo $var['id']; ?>">Edit</a>
 			<a href="delete.php?id=<?php echo $var['id']; ?>">Delete</a>
 		</li>

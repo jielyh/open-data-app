@@ -44,22 +44,29 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
 <meta charset="utf-8">
 <title>Page Views</title>
+<link href="../css/public.css" rel="stylesheet">
 </head>
 
 <body>
 
-	<form method="post" action="sign-in.php">
-   		 <div>
-    			<label for="email">Email Adress</label>
-        		<input type="email" id="email" name="email" required>
-   		 </div>
-    	 <div>
-    			<label for="password">Password</label>
-        		<input type="password" id="password" name="password" required>
-   		 </div>
+	<div class="insingle">
+        <form method="post" action="sign-in.php">
+             <div>
+                    <label for="email">Email Adress</label>
+                    <input type="email" id="email" name="email" required>
+             </div>
+             <div>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+             </div>
+        
+            <button type="submit">Sign in</button>
     
-    	<button type="submit">Sign in</button>
-
-	</form>
+        </form>
+        
+        <div class="login">
+        	<a href="../index.php">Home</a>
+    	</div>
+     </div>
 </body>
 </html>

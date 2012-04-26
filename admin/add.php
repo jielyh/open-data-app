@@ -45,26 +45,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	<meta charset="utf-8">
 	<title>Add a basketball court</title>
     <script src="../js/modernizr-2.5.3.js"></script>
-    <link href="../css/admin.css" rel="stylesheet"/>    
+    <link href="../css/public.css" rel="stylesheet"/>    
 </head>
 <body>
 	
-    
-	<form method="post" action="add.php">
-		<div>
-			<label for="name">Basketball Court Name<?php if (isset($errors['name'])) : ?> <strong>is required</strong><?php endif; ?></label>
-			<input id="name" name="name" value="<?php echo $name; ?>" required>
-		</div>
-		<div>
-			<label for="longitude">Longitude<?php if (isset($errors['longitude'])) : ?> <strong>is required</strong><?php endif; ?></label>
-			<input id="longitude" name="longitude" value="<?php echo $longitude; ?>" required>
-		</div>
-        <div>
-			<label for="latitude">Latitude<?php if (isset($errors['latitude'])) : ?> <strong>is required</strong><?php endif; ?></label>
-			<input id="latitude" name="latitude" value="<?php echo $latitude; ?>" required>
-		</div>
-		<button type="submit">Add</button>
-	</form>
-	
+    <div class="insingle">
+        <form method="post" action="add.php">
+            <div>
+                <label for="name">Basketball Court Name<?php if (isset($errors['name'])) : ?> <strong>is required</strong><?php endif; ?></label>
+                <input id="name" name="name" value="<?php echo $name; ?>" required>
+            </div>
+            <div>
+                <label for="longitude">Longitude<?php if (isset($errors['longitude'])) : ?> <strong>is required</strong><?php endif; ?></label>
+                <input id="longitude" name="longitude" value="<?php echo $longitude; ?>" required>
+            </div>
+            <div>
+                <label for="latitude">Latitude<?php if (isset($errors['latitude'])) : ?> <strong>is required</strong><?php endif; ?></label>
+                <input id="latitude" name="latitude" value="<?php echo $latitude; ?>" required>
+            </div>
+            <button type="submit">Add</button>
+        </form>
+        <div class="login">
+        	<a href="index.php">Admin Page</a>
+    	</div>
+	</div>	
 </body>
 </html>

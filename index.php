@@ -34,7 +34,7 @@ $results = $db->query('
             <input id="adr" placeholder="Address, Intersection, Postal Code, Park">
         </form>
         <span id="geo">Find Me</span>
-        <div class="login">
+        <div class="login buttons-css">
             <a href="admin/index.php">Admin Login</a>
         </div>
         

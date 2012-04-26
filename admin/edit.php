@@ -64,24 +64,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
 	<meta charset="utf-8">
 	<title><?php echo $name; ?> &middot; Edit Basketball Court!</title>
+    <link href="../css/public.css" rel="stylesheet">
 </head>
 <body>
 	
-	<form method="post" action="edit.php?id=<?php echo $id; ?>">
-		<div>
-			<label for="name">Basketball Court Name<?php if (isset($errors['name'])) : ?> <strong>is required</strong><?php endif; ?></label>
-			<input id="name" name="name" value="<?php echo $name; ?>" required>
-		</div>
-		<div>
-			<label for="longitude">longitude<?php if (isset($errors['longitude'])) : ?> <strong>is required</strong><?php endif; ?></label>
-			<input id="longitude" name="longitude" value="<?php echo $longitude; ?>" required>
-		</div>
-        <div>
-			<label for="latitude">latitude<?php if (isset($errors['latitude'])) : ?> <strong>is required</strong><?php endif; ?></label>
-			<input id="latitude" name="latitude" value="<?php echo $latitude; ?>" required>
-		</div>
-		<button type="submit">Save</button>
-	</form>
-	
+    <div class="insingle">
+        <form method="post" action="edit.php?id=<?php echo $id; ?>">
+            <div>
+                <label for="name">Basketball Court Name<?php if (isset($errors['name'])) : ?> <strong>is required</strong><?php endif; ?></label>
+                <input id="name" name="name" value="<?php echo $name; ?>" required>
+            </div>
+            <div>
+                <label for="longitude">longitude<?php if (isset($errors['longitude'])) : ?> <strong>is required</strong><?php endif; ?></label>
+                <input id="longitude" name="longitude" value="<?php echo $longitude; ?>" required>
+            </div>
+            <div>
+                <label for="latitude">latitude<?php if (isset($errors['latitude'])) : ?> <strong>is required</strong><?php endif; ?></label>
+                <input id="latitude" name="latitude" value="<?php echo $latitude; ?>" required>
+            </div>
+            <button type="submit">Save</button>
+        </form>
+        <div class="login">
+        	<a href="index.php">Admin Page</a>
+    	</div>
+	</div>	
 </body>
 </html>

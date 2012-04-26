@@ -84,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
             <button type="submit">Save</button>
         </form>
-        <div class="login">
+        <div class="login buttons-css">
         	<a href="index.php">Admin Page</a>
     	</div>
 	</div>	

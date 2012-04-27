@@ -10,7 +10,7 @@ Dependencies: jQuery, HTML5 ,CSS, google maps
 
 ## Quick Start
  
- Include `general.css`, `open-data-app.js`, in your HTML file. Create a table with the name and location of the community garden and input the sql query in the HTML file using php code.
+ Include `public.css`, `courts.js`, in your HTML file. Create a table with the name and location of the nearest volleyball court and input the sql query in the HTML file using php code.
 
  Github link: <https://github.com/jielyh/open-data-app->
 

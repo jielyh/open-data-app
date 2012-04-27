@@ -1,10 +1,9 @@
 # Basketball Court Locator
 
-
 #Author Info: 
 Jiely Ho
 
-Copyright MMXI, @adixime 
+Copyright MMXI, @jielyh.com
 
 Dependencies: jQuery, HTML5 ,CSS, google maps
 

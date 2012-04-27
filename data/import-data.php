@@ -9,20 +9,24 @@ $sql = $db->prepare('
 	VALUES (:name, :address, :longitude, :latitude)
 ');
 
-foreach ($places_xml->Document->Folder[0]->Placemark as $place) {
+foreach ($places_xml->Document->Placemark as $place) {
 	$coords = explode(',', trim($place->Point->coordinates));
 	
 	$adr = '';
+	$name = '';
 
-	foreach ($place->ExtendedData->SchemaData->SimpleData as $civic) {
+	foreach ($place->ExtendedData->Data as $civic) {
 		if ($civic->attributes()->name == 'Address') {
-			$adr = $civic;
+			$adr = $civic->value;
+		}
+		if ($civic->attributes()->name == 'Name') {
+			$name = $civic->value;
 		}
 	}
 
 	
 	
-		$sql->bindValue(':name', $place, PDO::PARAM_STR);
+		$sql->bindValue(':name', $name, PDO::PARAM_STR);
 		$sql->bindValue(':address', $adr, PDO::PARAM_STR);
 		$sql->bindValue(':longitude', $coords[0], PDO::PARAM_STR);
 		$sql->bindValue(':latitude', $coords[1], PDO::PARAM_STR);

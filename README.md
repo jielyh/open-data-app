@@ -12,7 +12,7 @@ Dependencies: jQuery, HTML5 ,CSS, google maps
  
  Include `public.css`, `courts.js`, in your HTML file. Create a table with the name and location of the nearest volleyball court and input the sql query in the HTML file using php code.
 
- Github link: <https://github.com/jielyh/open-data-app->
+ Github link: <https://github.com/jielyh/open-data-app/>
 
  phpfog link:<http://jiely-open-data-app.phpfogapp.com/>
 
